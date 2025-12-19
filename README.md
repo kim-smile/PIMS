@@ -1,11 +1,11 @@
-# PIMS 프로젝트
-###Background
+# PIMS(Personal Information Management System)
+### 📌 Background
 현대 개인 사용자들은 다양한 데이터를 여러 애플리케이션에 분산해 관리하고 있다. 이러한 구조는 정보가 분절되어 집중력 저하, 작업 전환 피로도 증가, 개인정보 누락 위험 등 여러 문제를 초래한다. 멀티모달 인터페이스의 보편화로 텍스트·이미지·음성 등 다양한 입력 방식이 자연스럽게 사용되는 환경에서, 분산된 정보를 한 화면에서 통합적으로 관리할 수 있는 PIMS(Personal Information Management System)의 필요성은 더욱 커지고 있다.
 
-###Objectives
+### 🎯 Objectives
 기존 PIMS는 정형화된 입력 방식과 낮은 접근성, 개인정보 보호 및 데이터 동기화 같은 기술적 한계를 가진다. 이에 LifeONE은 여러 앱에 흩어진 개인 정보를 하나의 서비스로 통합하고, 채팅 기반 인터페이스만으로 모든 데이터를 자연스럽게 입력·관리할 수 있는 PIMS를 목표로 한다. 사용자는 화면 전환이나 복잡한 양식 없이 대화하듯 정보를 입력하면, 시스템이 이를 자동으로 해석·정리·저장하도록 설계하였다.
 
-###Methods
+### 🛠 Methods
 LifeONE은 클라이언트 중심 구조로 설계되었으며, 별도의 백엔드 서버 없이 브라우저에서 독립적으로 동작한다. 시스템은 AI 서비스 계층, 프론트엔드 계층, 데이터 저장 계층의 3계층으로 구성된다.
 
 AI 서비스 계층은 geminiService.ts를 중심으로 Google Gemini 2.5 Flash API를 활용하여 사용자 입력을 분석하고, processChat() 함수가 자연어와 이미지를 연락처, 일정, 지출/수입, 메모로 자동 분류한다.
@@ -20,13 +20,13 @@ AI 서비스 계층은 geminiService.ts를 중심으로 Google Gemini 2.5 Flash 
 <img width="1600" height="847" alt="image" src="https://github.com/user-attachments/assets/882be513-03d9-450e-a2cc-7d8a24bf9c88" />
 <img width="1600" height="459" alt="image" src="https://github.com/user-attachments/assets/457fad49-6dcd-4416-9157-1a6a26a72d0f" />
 
-###Result
+### 📊 Result
 Vite 기반 프로토타입에서는 채팅, 캘린더, 가계부, 연락처, 메모장 기능이 서로 유기적으로 연결되어 작동함을 확인하였다. 비용 기록 기능에서는 텍스트와 이미지를 함께 활용하고, OCR을 활용한 자동 정보 추출이 안정적으로 수행됨을 검증하였다.
 <img width="1067" height="918" alt="image" src="https://github.com/user-attachments/assets/6a86e7b5-3bfe-48d0-921f-330fbcc82a1b" />
 20명을 대상으로 진행한 사용자 테스트 결과, 한 화면에서 여러 정보를 즉시 확인할 수 있다는 점이 긍정적으로 평가되었다. 이 과정에서 검색 기능 강화, 알림 설정, 모바일 UI 개선 등 추가적인 개선 필요성이 도출되었다.
 <img width="1065" height="474" alt="image" src="https://github.com/user-attachments/assets/106bd1f6-9406-4e2a-b158-e70912fd4348" />
 
-###Conclusions
+### 🧾 Conclusions
 LifeONE은 분산된 개인 정보를 통합 관리하는 채팅 기반 PIMS를 구현하여 개인 정보 관리 패러다임을 "수동적 기록"에서 "대화형 협업"으로 전환하였다. 연구의 주요 성과는 네 가지로 요약된다.
 1. 여러 애플리케이션에 나뉘어 있던 기능을 단일 대화형 인터페이스로 통합하여 앱 전환으로 인한 인지 부하와 작업 전환 피로도를 감소시켰다.
 2. Google Gemini API를 활용한 멀티모달 입력 처리 시스템을 구현하여 복잡한 양식 입력 없이 텍스트와 이미지를 자연스럽게 처리할 수 있도록 하였다.

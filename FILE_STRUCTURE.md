@@ -1,8 +1,7 @@
 ### Flie structure
 
 ## 📁 프로그램 전체
-components/
-
+components
  React UI 컴포넌트들이 모여있는 폴더입니다.
  - CalendarView.tsx - 일정 달력 뷰
  - ChatInterface.tsx - AI 챗봇 인터페이스
@@ -15,22 +14,19 @@ components/
  - TrashView.tsx - 휴지통 뷰
  - 각종 Modal 컴포넌트들 (ConfirmationModal, ConflictModal, ScheduleDetailModal 등)
    
-services/
-
+services
  AI 서비스 로직을 담당하는 폴더입니다.
  - geminiService.ts - Google Gemini API 연동 서비스
  - hybridService.ts - 하이브리드 AI 서비스 (로컬 모델 + Gemini 결합)
  - localModelService.ts - 로컬 AI 모델 서비스
 
-lora_finetuned/
-
+lora_finetuned
  LoRA(Low-Rank Adaptation) 파인튜닝된 모델 파일들입니다.
  - adapter_model.bin - 파인튜닝된 어댑터 모델
  - adapter_config.json - 어댑터 설정
  - Tokenizer 관련 파일들 (vocab.json, merges.txt 등)
    
-node_modules/
-
+node_modules
  npm 패키지 의존성 폴더입니다.
 
 프론트엔드 핵심 파일
@@ -204,22 +200,18 @@ hybridService.ts - 하이브리드 서비스 (메인 진입점)
  - 위치: hybridService.ts:55-229의 processChat() 함수
 
 아키텍처 흐름
+'''
 사용자 입력 → hybridService.processChat()
-
                 ├─ 이미지 있음? → geminiService
-                
                 ├─ 로컬 서버 활성화? → localModelService
-                
                 │   └─ 처리 가능? → ✓ 완료
-                
                 │       └─ 처리 불가? → geminiService (폴백)
-                
                 └─ 로컬 서버 비활성화? → geminiService
+'''
                 
 실제로는 hybridService.ts의 processChat()을 호출하면 모든 것이 자동으로 처리됩니다.
 
 ## 📁 node_modules
-
 특수 파일/폴더
  .bin/ - npm 패키지들이 제공하는 실행 가능한 명령어들이 저장됨 (예: vite, tsc 등)
  .package-lock.json - 설치된 모든 패키지의 정확한 버전 정보를 기록한 잠금 파일
